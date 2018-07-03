@@ -15,8 +15,8 @@ class Menu extends Component {
               },
               {
                 id:2,
-                title: 'Search',
-                link: '/search'
+                title: 'Listings',
+                link: '/listings'
               },
               {
                 id:3,
