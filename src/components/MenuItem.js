@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom';
 
 class MenuItem extends Component {
   render() {
@@ -7,21 +7,16 @@ class MenuItem extends Component {
     let menuItems;
     if (this.props.menuItems){
         menuItems = this.props.menuItems.map(menuItem =>{
-
             return ( 
-            <a key={menuItem.id} href={menuItem.link}>{menuItem.title}</a>
-        );
-
-        });
+                    <Link to={menuItem.link}  key={menuItem.id}>{menuItem.title}</Link>
+                );
+       });
 
     }
+    
     return (
         <div className="topnav">
-        {menuItems}
-        {/* <a href="#home" className="active">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>        */}
+            {menuItems}       
         </div>
       
     

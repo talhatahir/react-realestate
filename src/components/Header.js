@@ -8,7 +8,7 @@ class Header extends Component {
       
       <header className="App-header">
         <Menu />
-         <h1 className="App-title">Welcome to Tin Tin Real Estate Propery Portal</h1>
+         
       </header>   
     
     );

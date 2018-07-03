@@ -1,12 +1,24 @@
-import React, { Component } from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import React  from 'react';
 import './App.css';
+import Main from './components/Main';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+//Keeping it stateless
 
+const App =() => (
+    <div>
+      <Header />
+      <div className="container" >
+        <Main />
+      </div>
+      <Footer/>
+    </div>
+  )
+
+
+/*
 class App extends Component {
-
 
   render() {
     return (
@@ -18,5 +30,6 @@ class App extends Component {
     );
   }
 }
+*/
 
 export default App;

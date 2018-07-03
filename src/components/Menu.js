@@ -11,7 +11,7 @@ class Menu extends Component {
               {
                 id:1,
                 title: 'Home',
-                link: '/home'
+                link: '/'
               },
               {
                 id:2,
@@ -20,8 +20,8 @@ class Menu extends Component {
               },
               {
                 id:3,
-                title: 'Blog',
-                link: '/blog'
+                title: 'About',
+                link: '/about'
               }
             ]         
           
