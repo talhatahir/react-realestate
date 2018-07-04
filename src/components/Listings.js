@@ -41,10 +41,10 @@ class Listings extends Component {
     return (
       <div>
           <h1>Listings</h1>
-            <div className="col-xs-12 col-sm-offset-2 col-sm-8">
-            <ul className="event-list">
-                {listingsItems}
-            </ul>
+            <div className="row">
+                <div className="col-sm-8">             
+                 {listingsItems}
+                </div>
 			      </div>
           
           <br/>

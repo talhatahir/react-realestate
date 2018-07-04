@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 const App =() => (
     <div>
       <Header />
-      <div className="container" >
+      <div  className="container container-pad" id="property-listings">
         <Main />
       </div>
       <br/>
