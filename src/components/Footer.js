@@ -5,9 +5,11 @@ class Footer extends Component {
   render() {
     return (
       
-    <div className="footer">
-        <p>Footer</p>
-    </div>     
+    <footer className="navbar-inverse navbar-fixed-bottom">
+      <div className="container-fluid">
+      <div>© Tin Tin Real Estate - We show Properties No one Buys</div>
+      </div>
+    </footer>    
       
     );
   }

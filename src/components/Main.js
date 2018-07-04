@@ -6,13 +6,13 @@ import Listings from './Listings';
 import ListingItemDetails from './ListingItemDetails';
 
 const Main = () =>(
-    <main>    
+    <div className="row">    
         <Switch>
             <Route exact path='/' component={Home}  />
             <Route exact path='/listings' component={Listings}  />
             <Route exact path='/about' component={About} />
             <Route exact path='/listings/:id' component={ListingItemDetails} />
         </Switch>    
-    </main>
+    </div>
 )
 export default Main; 

@@ -8,16 +8,16 @@ class MenuItem extends Component {
     if (this.props.menuItems){
         menuItems = this.props.menuItems.map(menuItem =>{
             return ( 
-                    <Link to={menuItem.link}  key={menuItem.id}>{menuItem.title}</Link>
+                    <li  key={menuItem.id}><Link to={menuItem.link} >{menuItem.title}</Link></li>
                 );
        });
 
     }
     
     return (
-        <div className="topnav">
+        <ul className="nav navbar-nav">
             {menuItems}       
-        </div>
+        </ul>
       
     
     );

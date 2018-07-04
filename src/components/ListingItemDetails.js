@@ -29,8 +29,7 @@ class ListingItemDetails extends Component {
       }
     
   
-    render() {
-        
+    render() {     
 
     return (      
     <div>
@@ -40,6 +39,9 @@ class ListingItemDetails extends Component {
     <br/>
     <ul>
         <li>Name : {this.state.listingsDetails.name}</li>
+        <li>Email : {this.state.listingsDetails.email}</li>
+        <li>Phone : {this.state.listingsDetails.phone}</li>
+        <li>Website : {this.state.listingsDetails.website}</li>
     </ul>
     </div>
     );

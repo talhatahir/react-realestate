@@ -6,10 +6,9 @@ class Header extends Component {
   render() {
     return (
       
-      <header className="App-header">
-        <Menu />
-         
-      </header>   
+      <div>
+        <Menu />         
+      </div>   
     
     );
   }

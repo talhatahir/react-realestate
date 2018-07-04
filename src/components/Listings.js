@@ -41,9 +41,12 @@ class Listings extends Component {
     return (
       <div>
           <h1>Listings</h1>
-          <ul>
-          {listingsItems}
-          </ul>
+            <div className="col-xs-12 col-sm-offset-2 col-sm-8">
+            <ul className="event-list">
+                {listingsItems}
+            </ul>
+			      </div>
+          
           <br/>
           <Link to='/'>Back</Link>
       </div>
