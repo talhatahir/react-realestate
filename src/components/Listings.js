@@ -41,14 +41,13 @@ class Listings extends Component {
     return (
       <div>
           <h1>Listings</h1>
+          <Link to='/'>Back</Link>
             <div className="row">
                 <div className="col-sm-8">             
                  {listingsItems}
                 </div>
-			      </div>
-          
-          <br/>
-          <Link to='/'>Back</Link>
+			      </div>          
+          <br/>          
       </div>
     
     );

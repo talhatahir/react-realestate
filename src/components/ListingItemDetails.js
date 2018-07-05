@@ -33,16 +33,30 @@ class ListingItemDetails extends Component {
 
     return (      
     <div>
-    <h1>Listing Item Details </h1>
+    <h1>Listing Item Detail </h1>
     <br />
     <Link to='/listings'>Back</Link>
     <br/>
-    <ul>
-        <li>Name : {this.state.listingsDetails.name}</li>
-        <li>Email : {this.state.listingsDetails.email}</li>
-        <li>Phone : {this.state.listingsDetails.phone}</li>
-        <li>Website : {this.state.listingsDetails.website}</li>
-    </ul>
+    <div className="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+            <div className="media">                
+                <img alt="" className="img-responsive"
+                 src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg" />
+
+                <div className="clearfix visible-sm"></div>
+
+                <div className="media-body fnt-smaller">
+                    <h4 className="media-heading">{this.state.listingsDetails.email}</h4>
+                    <ul className="list-inline mrg-0 btm-mrg-10">
+                        <li>{this.state.listingsDetails.website}</li>
+                        <li >|</li>
+                        <li>5 Beds</li>
+                        <li >|</li>
+                        <li>5 Baths</li>
+                    </ul>
+                  <p className="hidden-xs">{this.state.listingsDetails.name}</p><span className="fnt-smaller fnt-lighter fnt-arial">{this.state.listingsDetails.phone}</span>
+                </div>
+            </div>
+        </div>    
     </div>
     );
   }
