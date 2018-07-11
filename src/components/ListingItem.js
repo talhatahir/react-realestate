@@ -15,7 +15,7 @@ class ListingItem extends Component {
 
                 <div className="clearfix visible-sm"></div>
 
-                <div className="media-body fnt-smaller">
+                <div className="media-body fnt-lighter">
                     
 
                     <h4 className="media-heading">

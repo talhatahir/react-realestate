@@ -44,7 +44,7 @@ class ListingItemDetails extends Component {
 
                 <div className="clearfix visible-sm"></div>
 
-                <div className="media-body fnt-smaller">
+                <div className="media-body fnt-lighter">
                     <h4 className="media-heading">{this.state.listingsDetails.email}</h4>
                     <ul className="list-inline mrg-0 btm-mrg-10">
                         <li>{this.state.listingsDetails.website}</li>

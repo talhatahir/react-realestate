@@ -8,7 +8,7 @@ class Listings extends Component {
 
   constructor(){
     super();
-    this.state={
+    this.state={ 
       listings:[]
     }
   }
