@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import * as actionTypes from '../store/actions';
+
 
 const Counter =(props) => (
     <div>
@@ -7,6 +9,7 @@ const Counter =(props) => (
         <p> Count : {props.count}</p>
         <button onClick={props.onIncrement}>Increment</button>
         <button onClick={props.onDecrement}>Decrement</button>
+        <button onClick={props.onAddValue}>Add +5</button>
 
         
     </div>
@@ -23,11 +26,15 @@ const mapStateToProps= (state)=>{
 const mapDispatchToProps = (dispatch) => {
     return {
         onIncrement : () => {
-            const action = {type : 'INCREMENT'};
+            const action = {type : actionTypes.INCREMENT};
             dispatch(action);
         },
         onDecrement : () => {
-            const action = {type : 'DECREMENT'};
+            const action = {type : actionTypes.DECREMENT};
+            dispatch(action);
+        },
+        onAddValue : () => {
+            const action = {type : actionTypes.ADDVALUE, val:10};
             dispatch(action);
         }
     }
