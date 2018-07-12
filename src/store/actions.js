@@ -1,4 +1,8 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const ADDVALUE = 'ADDVALUE';
+export const RESOLVED_GET_LISTINGS = 'RESOLVED_GET_LISTINGS';
+export const GET_LISTING_DETAIL = 'GET_LISTING_DETAIL';
+
+
 

@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(action);
         },
         onAddValue : () => {
-            const action = {type : actionTypes.ADDVALUE, val:10};
+            const action = {type : actionTypes.ADDVALUE, val:5};
             dispatch(action);
         }
     }

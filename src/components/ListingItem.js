@@ -7,7 +7,7 @@ class ListingItem extends Component {
   
     render() {
     return (
-        <div className="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+        <div className="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing" id={this.props.item.id}>
             <div className="media">
                 <Link className="pull-left" to={`/listings/${this.props.item.id}`}>
                 <img alt="" className="img-responsive"

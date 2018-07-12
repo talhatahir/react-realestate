@@ -1,36 +1,20 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
+import {connect} from 'react-redux';
+
 
 
 class ListingItemDetails extends Component { 
-    
-    
-    constructor(){
-        super();
-        this.state={
-          listingsDetails:[]
-        }
-      }
-    
-      getListingDetails(){
-          let listingId = this.props.match.params.id;
-        //Treating users detail data as some kind of a lisitng data
-        axios.get(`https://jsonplaceholder.typicode.com/users/${listingId}`)
-        .then(response =>{
-          this.setState({listingsDetails:response.data});
-        }
-        ).catch(err=> console.log(err));
-    
-      }
-      
-      componentWillMount(){
-        this.getListingDetails();
-      }
-    
+  
   
     render() {     
-
+    
+    let listingId = this.props.match.params.id;
+    let targetId = this.props.listings.filter(function (listing) {  
+      return listing.id == listingId;
+    }); 
+    targetId=targetId[0];
+    
     return (      
     <div>
     <h1>Listing Item Detail </h1>
@@ -45,15 +29,15 @@ class ListingItemDetails extends Component {
                 <div className="clearfix visible-sm"></div>
 
                 <div className="media-body fnt-lighter">
-                    <h4 className="media-heading">{this.state.listingsDetails.email}</h4>
+                    <h4 className="media-heading">{targetId.email}</h4>
                     <ul className="list-inline mrg-0 btm-mrg-10">
-                        <li>{this.state.listingsDetails.website}</li>
+                        <li>{targetId.website}</li>
                         <li >|</li>
                         <li>5 Beds</li>
                         <li >|</li>
                         <li>5 Baths</li>
                     </ul>
-                  <p className="hidden-xs">{this.state.listingsDetails.name}</p><span className="fnt-smaller fnt-lighter fnt-arial">{this.state.listingsDetails.phone}</span>
+                  <p className="hidden-xs">{targetId.name}</p><span className="fnt-smaller fnt-lighter fnt-arial">{targetId.phone}</span>
                 </div>
             </div>
         </div>    
@@ -62,4 +46,13 @@ class ListingItemDetails extends Component {
   }
 }
 
-export default ListingItemDetails;
+const mapStateToProps= (state)=>{
+  return{
+    listings:state.listings
+    } 
+};
+
+
+export default connect(mapStateToProps,null)(ListingItemDetails);
+
+

@@ -2,40 +2,22 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ListingItem from './ListingItem';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import * as actionTypes from '../store/actions';
 
 
 class Listings extends Component {
 
-  constructor(){
-    super();
-    this.state={ 
-      listings:[]
-    }
-  }
-
-  getListings(){
-    //Treating users data as some kind of a lisitng data
-    axios.get("https://jsonplaceholder.typicode.com/users").then(response =>{
-      this.setState({listings:response.data}, () => {
-        console.log(this.state);
-      });
-    });
-
-  }
-
   componentWillMount(){
-    this.getListings();
+    this.props.getListings();
   }
-
 
   render() {
-
-    const listingsItems = this.state.listings.map(listing=>{
+    const listingsItems = this.props.listings.map(listing=>{
       return(
         <ListingItem key={listing.id} item={listing}  />
       )
-
-    });
+  });
    
 
     return (
@@ -52,6 +34,30 @@ class Listings extends Component {
     
     );
   }
+
 }
 
-export default Listings;
+const getListings=(dispatch) =>{
+  //Treating users data as some kind of a lisitng data
+  axios.get("https://jsonplaceholder.typicode.com/users").then(response =>{
+    return dispatch({type:actionTypes.RESOLVED_GET_LISTINGS, data: response.data});   
+  }).catch(err=> console.log(err));
+
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {     
+      getListings : () => getListings(dispatch)    
+  };
+}
+
+const mapStateToProps= (state)=>{
+  console.log('mapStateToProps',state);
+  return{
+    listings:state.listings
+  }
+};
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Listings);
