@@ -1,48 +1,21 @@
-import React, { Component } from 'react';
-import MenuItem from './MenuItem';
+import React  from 'react';
 import {Link} from 'react-router-dom';
 
-
-class Menu extends Component {
-
-  constructor(){
-      super();
-      this.state ={
-        menuItems: [              
-              {
-                id:1,
-                title: 'Listings',
-                link: '/listings'
-              },
-              {
-                id:2,
-                title: 'About',
-                link: '/about'
-              }
-            ]         
-          
-      }
-  }
-
-
-  render() {
-
-    return (      
+const  Menu = () =>  (      
         <nav className="navbar navbar-inverse">
           <div className="container-fluid">
             <div className="navbar-header">
-            <Link className="navbar-brand" to='/'>Tin Tin Real Estate</Link>
+              <Link className="navbar-brand" to='/'>Tin Tin Real Estate</Link>
             </div>
             <div>
-                <MenuItem menuItems={this.state.menuItems}/>         
-              </div>      
+              <ul className="nav navbar-nav">
+                <li><Link to='/listings'>Listings</Link></li>
+                <li><Link to='/about'>About</Link></li>
+              </ul>
+            </div>      
           </div>
         </nav>
-              
-
     
     );
-  }
-}
 
 export default Menu;

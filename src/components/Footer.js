@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class Footer extends Component {
-  render() {
-    return (
-      
+const Footer = () => (      
     <footer className="navbar-inverse navbar-fixed-bottom">
       <div className="container-fluid">
       <div>© Tin Tin Real Estate - We show Properties No one Buys</div>
       </div>
     </footer>    
-      
     );
-  }
-}
 
 export default Footer;
