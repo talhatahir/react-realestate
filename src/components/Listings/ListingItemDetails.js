@@ -9,7 +9,7 @@ class ListingItemDetails extends Component {
     
     let listingId = this.props.match.params.id;
     let targetId = this.props.listings.filter(function (listing) {  
-      return listing.id == listingId;
+      return parseInt(listing.id) === parseInt(listingId);
     }); 
     targetId=targetId[0];
     

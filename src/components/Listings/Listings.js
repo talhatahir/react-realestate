@@ -3,13 +3,23 @@ import axios from 'axios';
 import ListingItem from './ListingItem';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
-import * as actionTypes from '../store/actions';
+import * as actionTypes from '../../store/actions';
+
 
 
 class Listings extends Component {
 
   componentWillMount(){
-    this.props.getListings();
+    this.props.getListings();    
+  }
+
+  
+  shouldComponentUpdate() {
+    console.log(this.props.hasFetched);
+    if (this.props.hasFetched) {
+      return false;
+    }
+    return true;
   }
 
   render() {
@@ -33,6 +43,7 @@ class Listings extends Component {
       </div>
     
     );
+
   }
 
 }
@@ -40,7 +51,7 @@ class Listings extends Component {
 const getListings=(dispatch) =>{
   //Treating users data as some kind of a lisitng data
   axios.get("https://jsonplaceholder.typicode.com/users").then(response =>{
-    return dispatch({type:actionTypes.RESOLVED_GET_LISTINGS, data: response.data});   
+    return dispatch({type:actionTypes.RESOLVED_GET_LISTINGS, data: response.data, fetchFlag:true});   
   }).catch(err=> console.log(err));
 
 }
@@ -53,9 +64,9 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps= (state)=>{
-  console.log('mapStateToProps',state);
   return{
-    listings:state.listings
+    listings:state.listings,
+    hasFetched: state.hasFetched 
   }
 };
 

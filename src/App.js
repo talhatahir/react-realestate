@@ -1,21 +1,14 @@
 import React  from 'react';
 import './App.css';
 import Main from './components/Main';
-import Header from './components/Header';
-import Footer from './components/Footer';
+
 
 //Keeping it stateless
 
 const App =() => (
-    <div>
-      <Header />
-        <div className="container container-pad" id="property-listings">
+        <div> 
           <Main />
-        </div>
-      <br/>
-      <br/>
-      <Footer/>
-    </div>
+        </div>    
   )
 
 export default App; 

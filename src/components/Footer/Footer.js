@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Footer = () => (      
     <footer className="navbar-inverse navbar-fixed-bottom">
       <div className="container-fluid">
