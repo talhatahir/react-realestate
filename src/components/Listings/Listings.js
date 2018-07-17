@@ -31,7 +31,7 @@ class Listings extends Component {
    
 
     return (
-      <div>
+      <div className="listings">
           <h1>Listings</h1>
           <Link to='/'>Back</Link>
             <div className="row">
@@ -40,8 +40,7 @@ class Listings extends Component {
                 </div>
 			      </div>          
           <br/>          
-      </div>
-    
+      </div>    
     );
 
   }

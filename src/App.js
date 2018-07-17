@@ -6,7 +6,7 @@ import Main from './components/Main';
 //Keeping it stateless
 
 const App =() => (
-        <div> 
+        <div className="App"> 
           <Main />
         </div>    
   )
