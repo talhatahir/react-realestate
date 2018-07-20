@@ -7,7 +7,6 @@ import Footer from './Footer/Footer';
 import Listings from './Listings/Listings';
 import ListingItemDetails from './Listings/ListingItemDetails';
 
-
 const Main = () =>(
     <div> 
         <BrowserRouter>   

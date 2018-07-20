@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actionTypes from '../../store/actions';
 
-
-
 class Listings extends Component {
 
   componentWillMount(){
@@ -25,7 +23,7 @@ class Listings extends Component {
   render() {
     const listingsItems = this.props.listings.map(listing=>{
       return(
-        <ListingItem key={listing.id} item={listing}  />
+        <ListingItem key={listing.listing_id} item={listing}  />
       )
   });
    
@@ -33,9 +31,10 @@ class Listings extends Component {
     return (
       <div className="listings">
           <h1>Listings</h1>
-          <Link to='/'>Back</Link>
             <div className="row">
-                <div className="col-sm-8">             
+                <div className="col-sm-7">   
+                <button type="button" className="btn flt-right"><Link  to='/'>Back</Link></button>
+                <br/>          
                  {listingsItems}
                 </div>
 			      </div>          
@@ -49,7 +48,8 @@ class Listings extends Component {
 
 const getListings=(dispatch) =>{
   //Treating users data as some kind of a lisitng data
-  axios.get("https://jsonplaceholder.typicode.com/users").then(response =>{
+  axios.get("http://localhost:8000/backend/api/").then(response =>{
+    console.log(response.data);
     return dispatch({type:actionTypes.RESOLVED_GET_LISTINGS, data: response.data, fetchFlag:true});   
   }).catch(err=> console.log(err));
 

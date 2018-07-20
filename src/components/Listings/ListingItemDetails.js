@@ -2,40 +2,40 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-
 class ListingItemDetails extends Component {   
   
     render() {     
     
     let listingId = this.props.match.params.id;
     let targetId = this.props.listings.filter(function (listing) {  
-      return parseInt(listing.id) === parseInt(listingId);
+      return parseInt(listing.listing_id) === parseInt(listingId);
     }); 
     targetId=targetId[0];
     
     return (      
-    <div>
+    <div className="col-sm-7">   
     <h1>Listing Item Detail </h1>
+    
+    <button type="button" className="btn flt-right"><Link  to='/listings'>Back</Link></button>
     <br />
-    <Link to='/listings'>Back</Link>
     <br/>
     <div className="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
             <div className="media">                
-                <img alt="" className="img-responsive"
-                 src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg" />
+                <img width="200"  alt="" className="img-responsive"
+                 src={targetId.image_url} />
 
                 <div className="clearfix visible-sm"></div>
 
                 <div className="media-body fnt-lighter">
-                    <h4 className="media-heading">{targetId.email}</h4>
+                    <h4 className="media-heading">{targetId.user_email}</h4>
                     <ul className="list-inline mrg-0 btm-mrg-10">
-                        <li>{targetId.website}</li>
+                        <li>4820 SqFt</li>
                         <li >|</li>
                         <li>5 Beds</li>
                         <li >|</li>
                         <li>5 Baths</li>
                     </ul>
-                  <p className="hidden-xs">{targetId.name}</p><span className="fnt-smaller fnt-lighter fnt-arial">{targetId.phone}</span>
+                  <p className="hidden-xs">{targetId.user_firstname} {targetId.user_lastname}</p><span className="fnt-smaller fnt-lighter fnt-arial">{targetId.user_cell}</span>
                 </div>
             </div>
         </div>    
